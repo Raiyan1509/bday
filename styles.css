@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(to right, #ffd6e8, #ffe6f0);
+  color: #ff4081;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 2rem;
+  border: 8px double #ff99cc;
+  border-radius: 30px;
+  background: #fff0f5;
+  box-shadow: 0 0 20px pink;
+}
+
+.heading {
+  font-size: 3rem;
+  animation: bounce 2s infinite;
+}
+
+.message {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+button {
+  background: #ff99cc;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff69b4;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.surprise, .carousel {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #ff69b4;
+}
+
+.surprise img {
+  width: 200px;
+  margin: 1rem 0;
+  border-radius: 20px;
+}
+
+.carousel img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 5px solid pink;
+  border-radius: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-10px); }
+  50% { transform: translateY(10px); }
+}
+
+.hearts::before {
+  content: '💖💗💕💓💞💘💝';
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+  animation: floatHearts 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes floatHearts {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(calc(360 * var(--hue)), 100%, 75%);
+  animation: fall 3s linear infinite;
+  border-radius: 50%;
+  z-index: 9999;
+  --hue: calc(100 * var(--i));
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
